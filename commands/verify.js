@@ -19,7 +19,7 @@ module.exports.run = async (bot,message, args) => {
     .setTimestamp()
     .setFooter(`©Royal ♡`, "https://i.imgur.com/0upIvKN.png");
 
-    message.author.sendMessage(announcement);
+    message.author.send(announcement);
   }
 }
 
