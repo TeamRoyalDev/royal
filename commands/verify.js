@@ -1,4 +1,4 @@
-const Discord = require("Discord.js");
+const Discord = require("discord.js");
 
 module.exports.run = async (bot,message, args) => {
   if (!channelName.startsWith(`verify`)) return message.channel.send(`You can execute this command in here!`) 
