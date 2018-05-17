@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args, member, guild, size) => {
     .setTimestamp()
     .setFooter(`© Royal ♡`, "https://i.imgur.com/0upIvKN.png");
 
-    message.channel.send(announcement);
+    message.channel.send(announcement)
     message.react('👍').then(() => message.react('👎'));
 
 const filter = (reaction, user) => {
