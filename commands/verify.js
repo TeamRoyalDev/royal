@@ -11,6 +11,15 @@ module.exports.run = async (bot,message, args) => {
   if(message.member.hasPermission("SEND_MESSAGES")) {
     let role = member.guild.roles.find("name", "💰 Member");
     member.addRole(role).catch(console.error);
+
+    let announcement = new Discord.RichEmbed()
+    .setAuthor("Successfully verified")
+    .setColor("#ffffff")
+    .setDescription(`${message.member}, you are now verified!`)
+    .setTimestamp()
+    .setFooter(`©Royal ♡`, "https://i.imgur.com/0upIvKN.png");
+
+    message.author.sendMessage(announcement);
   }
 }
 
