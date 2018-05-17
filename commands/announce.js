@@ -17,8 +17,8 @@ module.exports.run = async (bot, message, args, member, guild, size) => {
 
     message.channel.send(announcement)    		
         .then(function (message) {
-          message.react("👍")
-          message.react("👎")
+          message.react('👍')
+          message.react('👍')
        		message.pin()
           message.delete()
     			});
