@@ -14,9 +14,10 @@ module.exports.run = async (bot, message, args, member, guild, size) => {
     .setDescription(args.join(" ").slice(10))
     .setTimestamp()
     .setFooter(`© Royal ♡`, "https://i.imgur.com/0upIvKN.png");
+    message.react('👍').then(() => message.react('👎'));
 
     message.channel.send(announcement)
-    message.react('👍').then(() => message.react('👎'));
+ 
 
 const filter = (reaction, user) => {
     return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
