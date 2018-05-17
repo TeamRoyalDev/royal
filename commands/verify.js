@@ -8,7 +8,7 @@ module.exports.run = async (bot,message, args) => {
        .then(msg => {
         msg.delete(5000)
       })
-  if(message.member.hasPermission("VIEW_CHANNEL")) {
+  if(message.member.hasPermission("SEND_MESSAGES")) {
     let role = member.guild.roles.find("name", "💰 Member");
     member.addRole(role).catch(console.error);
   }
