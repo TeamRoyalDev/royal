@@ -2,7 +2,8 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot,message, args) => {
   let channel = message.channel;
-  let channelName = message.channel.name
+  let channelName = message.channel.name;
+  let member = message.member;
   if (!channelName.startsWith(`verify`)) return message.channel.send(`You can execute this command in here!`) 
        .then(msg => {
         msg.delete(5000)
