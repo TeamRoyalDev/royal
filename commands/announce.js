@@ -15,7 +15,13 @@ module.exports.run = async (bot, message, args, member, guild, size) => {
     .setTimestamp()
     .setFooter(`© Royal ♡`, "https://i.imgur.com/0upIvKN.png");
 
-    message.channel.send(announcement);
+    message.channel.send(announcement)
+    .then(function (message) {
+      message.react("👍")
+      message.react("👎")
+       message.pin()
+      message.delete()
+      });
 
 };
 
