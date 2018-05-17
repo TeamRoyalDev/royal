@@ -2,7 +2,8 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, member, guild, size) => {
     if (message.author.bot) return;
-
+    if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("No permissions to execute this command.");
+    if (message.member.hasPermission("ADMINISTRATOR")) {
     var msg = message.content;
     var args = msg.split(" ")
     if (!args[1]) return message.channel.send("`You have to provide a message for me to say!`");
@@ -15,33 +16,8 @@ module.exports.run = async (bot, message, args, member, guild, size) => {
     .setTimestamp()
     .setFooter(`© Royal ♡`, "https://i.imgur.com/0upIvKN.png");
 
-    message.channel.send(announcement)    		
-        .then(function (message) {
-         message.react('👍').then(() => message.react('👎'));
-       		message.pin()
-          message.delete()
-    			});
- 
-
-const filter = (reaction, user) => {
-    return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
-};
-
-message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
-    .then(collected => {
-        const reaction = collected.first();
-
-        if (reaction.emoji.name === '👍') {
-            message.reply('you reacted with a thumbs up.');
-        }
-        else {
-            message.reply('you reacted with a thumbs down.');
-        }
-    })
-    .catch(collected => {
-        console.log(`After a minute, only ${collected.size} out of 4 reacted.`);
-        message.reply('you didn\'t react with neither a thumbs up, nor a thumbs down.');
-    });
+    message.channel.send(announcement);
+    }
 };
 
 module.exports.help = {
