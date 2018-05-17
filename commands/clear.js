@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     if (args[0] > 100) return message.channel.send('**Please supply a number less than 100**');
   
     // Now, we can delete the messages
-    let logs = message.guild.channels.find('name', '💻Console');
+    let logs = message.guild.channels.find('name', '💻console');
 
     let logsembed = new Discord.RichEmbed()
     .setColor("#ffffff")
