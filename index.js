@@ -271,8 +271,9 @@ if (msg.includes(`RETARD`)) {
     logs.send(logsembed)
 
 }
+	let aut = message.author;
 
-if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+if (!message.author.hasPermission("MANAGE_MESSAGES")) {
 
 if (msg.includes(`DISCORD.GG/`)) {
     message.delete();
