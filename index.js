@@ -48,7 +48,11 @@ bot.on('guildMemberAdd', member => {
 
 bot.on('guildMemberAdd', member => {
 
-    console.log(`${member}`, "has joined" + `${member.guild.name}`)
+    console.log(`${member}`, "has joined " + `${member.guild.name}`)
+
+    var role = member.guild.roles.find('name', '⚠️Un-Verified');
+
+    member.addRole(role)
 
 });
 
