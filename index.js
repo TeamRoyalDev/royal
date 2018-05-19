@@ -272,7 +272,7 @@ if (msg.includes(`RETARD`)) {
 
 }
 
-if (!msg.member.hasPermission("MANAGE_MESSAGES")) {
+if (!message.member.hasPermission("MANAGE_MESSAGES")) {
 
 if (msg.includes(`DISCORD.GG/`)) {
     message.delete();
