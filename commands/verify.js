@@ -4,14 +4,11 @@ module.exports.run = async (bot,message, args) => {
   let channel = message.channel;
   let channelName = message.channel.name;
   let member = message.member;
-  if (!channelName.startsWith(`verify`)) return message.channel.send(`You are already verified.`) 
-       .then(msg => {
-        msg.delete(5000)
-      })
+  if (!channelName.startsWith(`verify`)) return message.channel.send(`You are already verified.`);
   if(message.member.hasPermission("SEND_MESSAGES")) {
     let role = member.guild.roles.find("name", "👤 Member");
-    member.addRole(role).catch(console.error);
-
+    member.addRole(role);
+    
     let announcement = new Discord.RichEmbed()
     .setAuthor("Successfully verified")
     .setColor("#ffffff")
