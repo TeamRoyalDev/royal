@@ -56,17 +56,16 @@ bot.on('guildMemberAdd', member => {
 });
 
 bot.on('guildMemberRemove', member => {
-    let channel = message.channel;
-    let other = member.guild.channel.find('name', 'logs');
+    let logs = member.guild.channels.find('name', 'logs');
     let memberavatar = member.user.avatarURL
-        if (!other) return;
+        if (!logs) return;
         let embed = new Discord.RichEmbed()
         .setColor("#ffffff")
         .addField('Server logs', `${member} left the server.`)
         .setFooter(`© Royal ♡`, "https://i.imgur.com/0upIvKN.png")
         .setTimestamp()
 
-        other.sendEmbed(embed);
+        logs.sendEmbed(embed);
 });
 
 bot.on('guildMemberRemove', member => {
@@ -115,7 +114,6 @@ bot.on('message', message => {
     .setTimestamp()
     .setFooter(`© Royal ♡`, "https://i.imgur.com/0upIvKN.png");
 
-    let logs = message.guild.channel.find('name', 'logs');
 
     if (msg.includes(`NIGGER`)) {
             message.delete();
