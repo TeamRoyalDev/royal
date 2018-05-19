@@ -9,7 +9,7 @@ module.exports.run = async (bot,message, args) => {
         msg.delete(5000)
       })
   if(message.member.hasPermission("SEND_MESSAGES")) {
-    let role = member.guild.roles.find("name", "💰 Member");
+    let role = member.guild.roles.find("name", "👤 Member");
     member.addRole(role).catch(console.error);
 
     let announcement = new Discord.RichEmbed()
