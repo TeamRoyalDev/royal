@@ -50,9 +50,8 @@ bot.on('guildMemberAdd', member => {
 
     console.log(`${member}`, "has joined " + `${member.guild.name}`)
 
-    var role = member.guild.roles.find('name', '⚠️Un-Verified');
-
-    member.addRole(role)
+    var joinrole = member.guild.roles.find('name', '⚠️Un-Verified');
+    member.addRole(joinrole)
 
 });
 
@@ -115,7 +114,7 @@ bot.on('message', message => {
     .setTimestamp()
     .setFooter(`© Royal ♡`, "https://i.imgur.com/0upIvKN.png");
 
-    let logs = message.guild.channels.find('name', 'logs');
+    let logs = message.guild.channel.find('name', 'logs');
 
     if (msg.includes(`NIGGER`)) {
             message.delete();
