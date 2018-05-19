@@ -56,7 +56,8 @@ bot.on('guildMemberAdd', member => {
 });
 
 bot.on('guildMemberRemove', member => {
-    let other = member.guild.channels.find('name', 'logs');
+    let channel = message.channel;
+    let other = member.guild.channel.find('name', 'logs');
     let memberavatar = member.user.avatarURL
         if (!other) return;
         let embed = new Discord.RichEmbed()
@@ -114,7 +115,7 @@ bot.on('message', message => {
     .setTimestamp()
     .setFooter(`© Royal ♡`, "https://i.imgur.com/0upIvKN.png");
 
-    let logs = message.guild.channels.find("name", "logs");
+    let logs = message.guild.channels.find('name', 'logs');
 
     if (msg.includes(`NIGGER`)) {
             message.delete();
