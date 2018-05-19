@@ -114,7 +114,7 @@ bot.on('message', message => {
     .setTimestamp()
     .setFooter(`© Royal ♡`, "https://i.imgur.com/0upIvKN.png");
 
-    let logs = message.guild.channel.find('name', 'logs');
+    let logs = message.guild.channels.find('name', 'logs');
 
     if (msg.includes(`NIGGER`)) {
             message.delete();
