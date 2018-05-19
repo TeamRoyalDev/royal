@@ -70,7 +70,7 @@ bot.on('guildMemberRemove', member => {
 });
 
 bot.on('guildMemberRemove', member => {
-    console.log(`${member}` + "has left" + `${member.guild.name}` + "Sending leave message now")
+    console.log(`${member}` + "has left" + `${member.guild.name} ` + "Sending leave message now")
     console.log("Leave Message Sent")
 });
 
