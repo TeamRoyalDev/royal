@@ -21,7 +21,7 @@ module.exports.run = async (bot,message, args) => {
 
     channel.send(announcement)
             .then(function (message) {
-                message.react(":white_check_mark:")
+                message.react("✅")
             }).catch(function() {})
   }
 }
