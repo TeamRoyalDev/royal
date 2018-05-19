@@ -7,7 +7,9 @@ module.exports.run = async (bot,message, args) => {
   if (!channelName.startsWith(`verify`)) return message.channel.send(`You are already verified.`);
   if(message.member.hasPermission("SEND_MESSAGES")) {
     let role = member.guild.roles.find("name", "👤 Member");
+    let otherrole = member.guild.roles.find("name", "⚠️Un-Verified");
     member.addRole(role);
+    member.removeRole(otherrole);
     
     let announcement = new Discord.RichEmbed()
     .setAuthor("Successfully verified")
