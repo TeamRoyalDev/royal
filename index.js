@@ -93,6 +93,7 @@ bot.on("message", async message => {
 })
 
 bot.on('message', message => {
+	let logs = member.guild.channels.find('name', 'logs');
             
     let msg = message.content.toUpperCase();
 
@@ -273,7 +274,7 @@ if (msg.includes(`RETARD`)) {
 }
 	let aut = message.author;
 
-if (!message.author.hasPermission("MANAGE_MESSAGES")) {
+if (!message.member.hasPermission("MANAGE_MESSAGES")) {
 
 if (msg.includes(`DISCORD.GG/`)) {
     message.delete();
