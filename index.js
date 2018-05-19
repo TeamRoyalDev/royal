@@ -93,7 +93,7 @@ bot.on("message", async message => {
 })
 
 bot.on('message', message => {
-	let logs = member.guild.channels.find('name', 'logs');
+ let logs = message.guild.channels.find('name', 'logs');
             
     let msg = message.content.toUpperCase();
 
