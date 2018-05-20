@@ -56,7 +56,10 @@ bot.on('guildMemberAdd', member => {
 });
 
 bot.on('guildMemberRemove', member => {
-    let logs = member.guild.channels.find(`name`, "logs");
+    let logs = message.guild.channels.find(`name`, "logs");
+   if(!logs){
+       logs = message.guild.createChannel("logs", "text");
+   }
     let memberavatar = member.user.avatarURL
         if (!logs) return;
         let embed = new Discord.RichEmbed()
@@ -94,10 +97,10 @@ bot.on("message", async message => {
 
 bot.on('message', message => {
 	
- let logs = message.guild.channels.find(`name`, "logs");
-if(!logs){
-    logs = message.guild.createChannel("logs", "text");
-}
+    let logs = message.guild.channels.find(`name`, "logs");
+    if(!logs){
+        logs = message.guild.createChannel("logs", "text");
+    }
             
     let msg = message.content.toUpperCase();
 
