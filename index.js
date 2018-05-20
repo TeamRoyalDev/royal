@@ -96,7 +96,7 @@ bot.on('message', message => {
 	
  let logs = message.guild.channels.find(`name`, "logs");
 if(!logs){
-    logs = message.guild.createChannel("logs", text);
+    logs = message.guild.createChannel("logs", "text");
 }
             
     let msg = message.content.toUpperCase();
